@@ -40,6 +40,38 @@ const App = () => {
       // Your code here to change lightStatus when the 
       //   state of the state machine changes
 
+      switch (state.value) {
+        case "off":
+          setLightStatus({
+            RedOn: false,
+            YellowOn: false,
+            GreenOn: false,
+          });
+          break;
+        case "GreenOn":
+          setLightStatus({
+            RedOn: false,
+            YellowOn: false,
+            GreenOn: true,
+          });
+          break;
+        case "YellowOn":
+          setLightStatus({
+            RedOn: false,
+            YellowOn: true,
+            GreenOn: false,
+          });
+          break;
+        case "RedOn":
+          setLightStatus({
+            RedOn: true,
+            YellowOn: false,
+            GreenOn: false,
+          });
+          break;
+        default: 
+          console.log("Invalid state for light machine");
+      }
     });
   }, [])
 
